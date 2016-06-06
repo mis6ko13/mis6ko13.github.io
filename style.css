@@ -1,0 +1,250 @@
+* {
+	box-sizing: border-box;
+}
+
+
+.wrap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgb(245, 245, 245);
+}
+
+.todo-app {
+	position: absolute;
+  top: 20%;
+  left: 50%;
+	transform: translateX(-50%);
+	box-shadow: 0 30px 60px 10px rgba(0,0,0,0.1),
+							0 2px 3px 1px rgba(0,0,0,0.2);
+}
+
+.footer,
+.task {
+	width: 550px;
+	height: 65px;
+  background: #fff;
+	font-size: 24px;
+	font-family: sans-serif;
+	color: dimgray;
+}
+
+.main .task {
+	position: relative;
+}
+
+header.task .before {
+	position: absolute;
+	height: 35px;
+	width: 40px;
+	text-align: center;
+	vertical-align: middle;
+	display: inline-block;
+	top: 14px;
+	padding: 7px;
+	cursor: pointer;
+	color: lightgray;
+/*	transform: scale(-1);*/
+}
+
+header.task .before:hover {
+	color: gray;
+}
+
+.up {
+	transform: scale(-1); 
+}
+
+.add {
+	float: right;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: white;
+	color: white;
+	margin: 7px 10px;
+	font-size: 43px;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	transition: background-color 0.2s linear;
+}
+
+.task:hover > .add {
+	background-color: rgba(107, 188, 145, .9);
+}
+
+.task .add:hover {
+	background-color: seagreen;
+}
+
+ 
+.main .task:hover > .add {
+	background-color: salmon;
+}
+
+.main .task .add:hover {
+	background-color: crimson;
+}
+
+.clearfix::after {
+	display: block;
+	content: '';
+	clear: both;
+}
+
+.new-todo {
+	border: none;
+	height: 100%;
+	width: 450px;
+	padding: 16px 16px 16px 50px;
+	font-size: 24px;
+	outline: none;
+}
+
+::-webkit-input-placeholder{
+	font-style: italic;
+}
+
+::-moz-placeholder {
+	font-style: italic;
+}
+
+.main > .task {
+	border-top: 1px solid lightgray;
+}
+
+.main {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}
+
+.footer {
+	height: 50px;
+	font-size: 14px;
+	vertical-align: middle;
+	border-top: 1px solid lightgray;
+	padding: 15px 10px 10px;
+}
+
+.footer button {
+	height: 100%;
+	background-color: white;
+	border-style: none;
+	border: 1px solid lightgray;
+	border-radius: 2px;
+	margin-right: 15px;
+	cursor: pointer;
+}
+.footer button:hover {
+	border-color: darkgray;
+}
+.footer button:focus {
+	outline-color: lightseagreen;
+}
+
+.footer button:last-child {
+	margin: 0 0 0 35px;
+	
+}
+
+.float-left {
+	float: left;
+	height: 100%;
+}
+
+.float-left > span {
+	vertical-align: middle;
+	line-height: 24px;
+}
+
+.float-right {
+	float: right;
+	height: 100%;
+}
+
+[type='checkbox'] {
+	display: none;
+}
+
+.checkbox {
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 1px solid dimgray;
+	cursor: pointer;
+	top: 8px;
+	left: 6px;
+	border-color: white;
+	transition: border-color 0.2s ease;
+}
+
+[type='checkbox']:checked +.checkbox,
+.main .task:hover > .checkbox {
+	border-color: lightslategray;
+}
+
+[type='checkbox']:checked + .checkbox:after {
+	position: absolute;
+	content: '✓';
+	top: -3px;
+	left: 5px;
+	color: lightseagreen;
+}
+
+.content {
+	display: inline-block;
+	line-height: 65px;
+	margin-left: 10px;
+	vertical-align: middle;
+	overflow: hidden;
+	max-width: 415px;
+	transition: text-decoration 0.5s ease,
+							color 0.5s ease;
+}
+
+.completed .content,
+[type='checkbox']:checked ~ .content {
+	text-decoration: line-through;
+	color: lightgray;
+}
+
+.main .task:hover > .close {
+	transform: rotate(0deg);
+	transition: transform 0.2s linear;
+}
+
+.main .task:hover > .close:hover {
+	transform: rotate(135deg);
+}
+
+.counter {
+	position: relative;
+}
+
+.edit-input {
+	padding-left: 6px;
+	height: 100%;
+	width: 510px;
+	position: absolute;
+	top: 0;
+	left: 40px;
+	font-size: 24px;
+	font-family: sans-serif;
+	border: none;
+	box-shadow: inset 0 0 3px 1px rgba(0,0,0,0.2);
+}
+
+.edit-input:focus {
+	outline-color: lightseagreen;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>toDoList</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="wrap">
+		<div class="todo-app">
+			<header class="task clearfix">
+			<div data-id='show-hide-tasks' class="before">^</div>
+				<input data-id='new-todo' class="new-todo" placeholder="What needs to be done?" value="" autofocus>
+				<div data-id='add-button' class="add">+</div>
+			</header>
+			<section data-id='main-section' class="main">
+<!-------------------Task template here----------------------->
+			</section>		
+<!-------------------footer template begining----------------->
+			<footer class="footer clearfix">
+				<div class="float-left">
+					<span class="counter" data-id='active-task-counter'>0</span>			
+					<span data-id='items-left'>items left</span>
+				</div>
+				<div class="float-right">	
+					<button data-id='show-all'>All</button>
+					<button data-id='show-active'>Active</button>
+					<button data-id='show-completed'>Completed</button>
+					<button data-id='clear-completed'>Clear completed</button>
+				</div>
+			</footer>
+<!------------------footer template end---------------------->		
+			<script type="text/javascript" src="js/app.js"></script>
+			<script type="text/javascript" src="js/localStorageTodos.js"></script>
+			<script type="text/javascript" src="js/buttons.js"></script>
+		</div>
+	</div>
+</body>
+</html>
