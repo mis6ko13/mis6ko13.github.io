@@ -58,6 +58,7 @@ window.addEventListener('load', function() {
 			} else {
 				taskNode.classList.add('active');
 			}
+			
 			var activeTasks = todoApp.getElementsByClassName('active');
 			
 			if (activeTasks.length === 1) {

@@ -45,12 +45,24 @@ var	todoApp = document.querySelector('.todo-app'),
 			content: taskContent.textContent
 		};
 		
+		var activeTasks = todoApp.getElementsByClassName('active');
+		
+		if (activeTasks.length === 1) {
+			taskCounter.innerHTML = 1;
+			itemsLeftNode.innerHTML = 'item left';
+		};
+		
+		if (activeTasks.length === 0 || activeTasks.length > 1) {
+			taskCounter.innerHTML = activeTasks.length;
+			itemsLeftNode.innerHTML = 'items left';
+		};
+		
 		localStorage.setItem('todos', JSON.stringify(todos));	
 		footer.style.display = 'block';
 		showHideBtn.style.display = 'block';
 		showHideBtn.classList.toggle('up');
 		mainSection.classList.add('show');
-		showHideBtn.classList.toggle('up');		
+		showHideBtn.classList.toggle('up');	
 	};
 	
 /* controller for template download */
