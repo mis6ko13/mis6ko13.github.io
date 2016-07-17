@@ -298,6 +298,23 @@ header.task .before:hover {
 	.new-todo {
 		width: 80%;
 	}
+	
+	.task .add {
+	transform: rotate(0deg) translateY(-25px);
+}
+	
+	.main .task > .close {
+		transform: rotate(45deg) translateY(-25px);
+	}
+
+	.main .task:hover > .close {
+		transform: rotate(45deg) translateY(-25px);
+		transition: transform 0.2s linear;
+	}
+
+	.main .task:hover > .close:hover {
+		transform: rotate(45deg) translateY(-25px);
+	}
 }
 
 
@@ -340,20 +357,20 @@ header.task .before:hover {
 	}
 	
 		.task .add {
-	transform: rotate(0deg) translateY(-20px);
+			transform: rotate(0deg) translateY(-20px);
 }
 	
 	.main .task > .close {
-		transform: rotate(0deg) translateY(-20px);
+		transform: rotate(45deg) translateY(-20px);
 	}
-
+	
 	.main .task:hover > .close {
-		transform: rotate(0deg) translateY(-20px);
+		transform: rotate(45deg) translateY(-20px);
 		transition: transform 0.2s linear;
 	}
 
 	.main .task:hover > .close:hover {
-		transform: rotate(135deg) translateY(-20px);
+		transform: rotate(45deg) translateY(-20px);
 	}
 	
 	.main .task {
