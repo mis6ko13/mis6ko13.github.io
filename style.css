@@ -23,7 +23,6 @@ body{
 .footer,
 .task {
 	width: 550px;
-	height: 65px;
   background: #fff;
 	font-size: 24px;
 	font-family: sans-serif;
@@ -31,7 +30,12 @@ body{
 }
 
 .main .task {
+	padding: 15px 0;
 	position: relative;
+	/*
+	vertical-align: middle;
+	display: table;
+*/
 }
 
 header.task .before {
@@ -52,23 +56,32 @@ header.task .before:hover {
 	color: gray;
 }
 
+.new-todo, .task {
+    position: relative;
+}
+
 .up {
 	transform: scale(-1); 
 }
 
 .add {
-	float: right;
+	position: absolute;
+  right: 6px;
+  top: 50%;
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
 	background-color: white;
 	color: white;
-	margin: 7px 10px;
+/*	margin: 7px 10px;*/
 	font-size: 44px;
 	text-align: center;
-	vertical-align: middle;
+	display: table-cell;
 	cursor: pointer;
-	transition: background-color 0.2s linear;
+	transform-origin: top;
+  transform: rotate(0deg) translateY(-20px);
+	transition: background-color 0.2s linear,
+							transform .2s ease-out;
 }
 
 .task:hover > .add {
@@ -86,6 +99,7 @@ header.task .before:hover {
 
 .main .task .add:hover {
 	background-color: crimson;
+	transform: rotate(135deg) translateY(-25px);
 }
 
 .clearfix::after {
@@ -172,14 +186,15 @@ header.task .before:hover {
 }
 
 .checkbox {
-	position: relative;
+	position: absolute;
 	display: inline-block;
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
 	border: 1px solid dimgray;
 	cursor: pointer;
-	top: 8px;
+	top: 50%;
+	transform: translateY(-15px);
 	left: 6px;
 	border-color: white;
 	transition: border-color 0.2s ease;
@@ -200,11 +215,13 @@ header.task .before:hover {
 
 .content {
 	display: inline-block;
-	line-height: 65px;
-	margin-left: 10px;
-	vertical-align: middle;
+	line-height: 25px;
+	width: 70%;
+	height: 100%;
+	margin-left: 45px;
 	overflow: hidden;
 	max-width: 415px;
+	word-wrap: break-word;
 	transition: text-decoration 0.5s ease,
 							color 0.5s ease;
 }
@@ -237,16 +254,23 @@ header.task .before:hover {
 	outline-color: lightseagreen;
 }
 
-@media screen and (min-width: 761px){
+	.task .add {
+	transform: rotate(0deg) translateY(-25px);
+}
+	
+	.main .task > .close {
+		transform: rotate(0deg) translateY(-25px);
+	}
+
 	.main .task:hover > .close {
-		transform: rotate(0deg);
+		transform: rotate(0deg) translateY(-25px);
 		transition: transform 0.2s linear;
 	}
 
 	.main .task:hover > .close:hover {
-		transform: rotate(135deg);
+		transform: rotate(135deg) translateY(-25px);
 	}
-}
+
 
 @media screen and (max-width: 760px){
 	.wrap {
@@ -273,10 +297,6 @@ header.task .before:hover {
 	}
 	.new-todo {
 		width: 80%;
-	}
-	
-	.main .task > .close {
-		transform: rotate(135deg);
 	}
 }
 
@@ -313,12 +333,31 @@ header.task .before:hover {
 		width: 40px;
 		height: 40px;
 		font-size: 36px;
-		margin-right: 6px;
-		margin-top: 10px;
 	}
 
 	.todo-app .footer {
 		padding: 15px 5px 10px;
+	}
+	
+		.task .add {
+	transform: rotate(0deg) translateY(-20px);
+}
+	
+	.main .task > .close {
+		transform: rotate(0deg) translateY(-20px);
+	}
+
+	.main .task:hover > .close {
+		transform: rotate(0deg) translateY(-20px);
+		transition: transform 0.2s linear;
+	}
+
+	.main .task:hover > .close:hover {
+		transform: rotate(135deg) translateY(-20px);
+	}
+	
+	.main .task {
+		padding: 10px 0;
 	}
 
 }
